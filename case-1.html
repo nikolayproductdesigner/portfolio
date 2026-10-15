@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лимиты в зелёном банке — Николай Грачев</title>
+    <meta name="description" content="Исследование на 103 респондентах и редизайн раздела «Лимиты» в мобильном банке.">
+    <link rel="preload" href="fonts/tt-interphases-pro-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/tt-interphases-pro-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/case.css">
+  </head>
+  <body>
+    <header class="main-header">
+      <a class="button button-small button-back" href="index.html">← на главную</a>
+      <nav class="header-buttons">
+        <a class="button button-small" href="#" data-link="cv">cv</a>
+        <a class="button button-small" href="https://t.me/kolya01101110" target="_blank" rel="noopener" data-link="tg">tg</a>
+      </nav>
+    </header>
+
+    <main class="case">
+      <h1 class="case-title text-h1">Провёл исследование на&nbsp;103&nbsp;респондентах и&nbsp;оживил раздел «Лимиты» в&nbsp;зелёном банке</h1>
+
+      <div class="case-media-block">
+        <div class="case-hero-media">
+          <div class="case-phones case-phones--hero" data-before-after data-fit="1158">
+            <div class="switch switch--toggle" role="group" aria-label="Версия экранов">
+              <span class="pill" aria-hidden="true"></span>
+              <button class="switch-item" type="button" data-state="before">было</button>
+              <button class="switch-item is-active" type="button" data-state="after">стало</button>
+            </div>
+            <img class="phone" src="case-1/hero-home.webp" data-after="case-1/hero-home.webp" data-before="case-1/hero-home-old.webp" alt="Главный экран" width="393" height="852">
+            <img class="phone" src="case-1/hero-limit.webp" data-after="case-1/hero-limit.webp" data-before="case-1/hero-limit-old.webp" alt="Настройка лимита" width="393" height="852">
+          </div>
+          <img class="case-img" src="case-1/research.webp" alt="" width="1158" height="502" loading="lazy">
+        </div>
+        <a class="button button-big button-dark" href="https://www.figma.com/design/EAk7F6zM6c15Ief7nHnXBM/%D0%A1%D0%B1%D0%B5%D1%80-%E2%80%A2-%D0%A1%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B9-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%BE%D0%B2-%D0%BF%D0%BE-%D0%BA%D0%B0%D1%80%D1%82%D0%B5?node-id=0-1" target="_blank" rel="noopener" data-link="figma"><img src="images/icon-figma.png" alt="" width="24" height="24">СРАЗУ В ФИГМУ</a>
+      </div>
+
+      <section class="case-text">
+        <h2 class="case-label">Проблема</h2>
+        <p class="case-lead">Пользователи Сбера хотят контролировать траты, но&nbsp;настройку лимита сложно найти, нельзя установить лимит на&nbsp;день или&nbsp;неделю, а&nbsp;после временного снятия лимита пользователь не&nbsp;возвращает его обратно</p>
+      </section>
+
+      <section class="case-text">
+        <h2 class="case-label">Задача</h2>
+        <p class="case-lead">Проанализировать сценарий «изменение лимитов по&nbsp;карте» для&nbsp;Сбера и&nbsp;предложить решения, которые закроют потребности пользователей и&nbsp;принесут пользу бизнесу</p>
+      </section>
+
+      <div class="case-notes">
+        <section class="case-note">
+          <h2 class="case-label">Выгода бизнесу</h2>
+          <p class="case-body">Удобные лимиты увеличивают частоту открытий приложения и глубину использования продукта.<br>Повышается лояльность к банку, открывается возможность для продвижения других продуктов: накопительные счёта и инвестиции</p>
+        </section>
+        <section class="case-note">
+          <h2 class="case-label">Выгода пользователю</h2>
+          <p class="case-body">Удобные лимиты формируют финансовую привычку: пользователь видит, сколько осталось до конца лимита, реже совершает импульсивные покупки и лучше планирует бюджет. Со временем это напрямую влияет на финансовое благополучие.</p>
+        </section>
+      </div>
+
+      <section class="case-text case-text--gap-16">
+        <h2 class="case-label">Процесс</h2>
+        <ol class="case-chips">
+          <li>UX аудит Сбера</li>
+          <li>Бенчмаркинг</li>
+          <li>Интервью</li>
+          <li>Branstorm</li>
+          <li>Опрос</li>
+          <li>Гипотезы и приоритеты</li>
+          <li>Проектирование</li>
+          <li>Ю-тест</li>
+          <li>Правки</li>
+        </ol>
+      </section>
+
+      <section class="case-research">
+        <p class="case-lead case-col" style="text-align: center">Сначала ресёч потом гипотезы!</p>
+        <img src="case-1/collage.webp" alt="Скриншоты интервью с респондентами" width="692" height="459" loading="lazy">
+        <div class="case-research-cta">
+          <a class="button button-big" href="https://www.figma.com/design/EAk7F6zM6c15Ief7nHnXBM/%D0%A1%D0%B1%D0%B5%D1%80-%E2%80%A2-%D0%A1%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B9-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%BE%D0%B2-%D0%BF%D0%BE-%D0%BA%D0%B0%D1%80%D1%82%D0%B5?node-id=0-1" target="_blank" rel="noopener" data-link="figma"><img src="images/icon-figma.png" alt="" width="24" height="24">ВСЕ АРТЕФАКТЫ</a>
+          <p class="case-caption">гайды для ресёча, скрины, подробные выводы</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-section-text">
+          <div class="case-text">
+            <h2 class="case-label">Решение 1</h2>
+            <p class="case-lead">Начнём с&nbsp;промо&nbsp;→ Делаем баннер на&nbsp;главной странице, а&nbsp;в&nbsp;сценарий успешной оплаты добавим чуть-чуть эмоций. Делаем акцент на&nbsp;накоплении, а&nbsp;не&nbsp;на&nbsp;лимитах и&nbsp;ограничениях.</p>
+          </div>
+          <div class="case-text">
+            <h3 class="case-label">Аргументы</h3>
+            <ol class="case-list case-small">
+            <li>19% не использующих лимит в открытом вопросе назвали накопление на цель как повод, который мог бы заставить их попробовать лимит</li>
+            <li>57 из 103 респондентов лимитами не пользуются вообще и в раздел лимитов не заходят, но можно дотянуться до них на главном экране и в сценарии успешной оплаты, там и размещаем баннеры</li>
+          </ol>
+          </div>
+        </div>
+        <div class="case-phones" data-fit="1158">
+          <img class="phone" src="case-1/s1-home.webp" alt="" width="295" height="640" loading="lazy">
+          <img class="phone" src="case-1/s1-info.webp" alt="" width="295" height="640" loading="lazy">
+          <img class="phone" src="case-1/s1-promo.webp" alt="" width="295" height="640" loading="lazy">
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-section-text">
+          <div class="case-text">
+            <h2 class="case-label">Решение 2</h2>
+            <p class="case-lead">Если дать пользователям возможность автоматически откладывать неистраченный остаток от&nbsp;лимита на&nbsp;накопительный счёт, то&nbsp;у&nbsp;пользователей фичи вырастет LTV, т.к. появится дополнительная ценность (не&nbsp;только сохранять деньги, но&nbsp;и&nbsp;откладывать их на&nbsp;цель)</p>
+          </div>
+          <div class="case-text">
+            <h3 class="case-label">Аргументы</h3>
+            <ol class="case-list case-small">
+            <li>На вопрос «Что бы вы добавили в настройки лимитов?» (мультивыбор) 74% пользователей лимитов — 34 из 46 — отметили вариант «Если потратилось меньше лимита, отправлять остаток на отдельный счёт/в копилку».</li>
+            <li>Фича с автонакоплением открывает возможность привлечь новых пользователей к лимитам. 19% (11 из 57 человек) не использующих лимит в открытом вопросе назвали накопление на цель как повод, который мог бы заставить их попробовать лимит.</li>
+            <li>Рост баланса на накопительном счёте сам по себе является стимулом пользоваться лимитом и снижает вероятность отказа от фичи</li>
+          </ol>
+          </div>
+        </div>
+        <div class="case-phones" data-fit="1158">
+          <img class="phone" src="case-1/s2-savings.webp" alt="" width="295" height="640" loading="lazy">
+          <img class="phone" src="case-1/autosavings-list.webp" alt="" width="295" height="640" loading="lazy">
+          <img class="phone" src="case-1/s2-info.webp" alt="" width="295" height="640" loading="lazy">
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-section-text">
+          <div class="case-text">
+            <h2 class="case-label">Решение 3</h2>
+            <p class="case-lead">Если при&nbsp;оплате сверх лимита спросить подтверждение, то&nbsp;пользователи перестанут выключать лимит&nbsp;→ У&nbsp;лимитов снизится отток пользователей</p>
+          </div>
+          <div class="case-text">
+            <h3 class="case-label">Аргументы</h3>
+            <ol class="case-list case-small">
+            <li>76% пользователей лимитов (35 из 46) снимали лимит ради крупной покупки. 18 из 35 человек забыли поставить его обратно.</li>
+            <li>При достижении лимита 46% пользователей лимитов (21 из 46) предпочли бы мягкий лимит — предупреждение и возможность оплаты сверх лимита</li>
+          </ol>
+          </div>
+        </div>
+        <div class="case-phones" data-fit="1158">
+          <img class="phone" src="case-1/s3-push.webp" alt="" width="295" height="640" loading="lazy">
+          <img class="phone" src="case-1/s3-warning.webp" alt="" width="295" height="640" loading="lazy">
+          <img class="phone" src="case-1/s3-unlocked.webp" alt="" width="295" height="640" loading="lazy">
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-section-text">
+          <div class="case-text">
+            <h2 class="case-label">Решение 4</h2>
+            <p class="case-lead">Если добавить возможность настраивать лимит на&nbsp;неделю и&nbsp;день, то&nbsp;у&nbsp;пользователей, которым это важно, будет меньше повода уйти к&nbsp;конкурентам, у&nbsp;которых есть лимиты на&nbsp;день/неделю.</p>
+          </div>
+          <div class="case-text">
+            <h3 class="case-label">Аргументы</h3>
+            <ol class="case-list case-small">
+            <li>«На вопрос «Что бы вы добавили в настройки лимитов?» (мультивыбор) 20% пользователей лимитов — 9 из 46 — отметили вариант «Лимит на неделю» или «Лимит на день»»</li>
+            <li>Настройка лимита на неделю или день есть почти у всех конкурентов</li>
+          </ol>
+          </div>
+        </div>
+        <div class="case-phones" data-fit="1158">
+          <img class="phone" src="case-1/s4-list.webp" alt="" width="295" height="640" loading="lazy">
+          <img class="phone" src="case-1/s4-info.webp" alt="" width="295" height="640" loading="lazy">
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-section-text">
+          <div class="case-text">
+            <h2 class="case-label">Решение 5</h2>
+            <p class="case-lead">Если при&nbsp;настройке лимита за&nbsp;месяц показывать среднюю сумму трат, то&nbsp;пользователю будет проще настраивать лимит, а&nbsp;значит уменьшится трение и&nbsp;повысится CR в&nbsp;завершение настройки</p>
+          </div>
+          <div class="case-text">
+            <h3 class="case-label">Аргументы</h3>
+            <ol class="case-list case-body">
+            <li>В интервью 2 из 5 пользователей пожаловались, что хотят видеть подсказку по сумме средних трат при настройке</li>
+            <li>Подсказка не усложняет интерфейс и не требует дополнительного шага, это просто одна строка под полем ввода</li>
+          </ol>
+          </div>
+        </div>
+        <div class="case-phones" data-fit="1158">
+          <img class="phone" src="case-1/s5-screen.webp" alt="" width="295" height="640" loading="lazy">
+          <p class="case-annotation case-annotation--text" aria-hidden="true">it's here</p>
+          <p class="case-annotation case-annotation--arrow" aria-hidden="true">-&gt;</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-section-text">
+          <div class="case-text">
+            <h2 class="case-label">Решение 6</h2>
+            <p class="case-lead">Если при&nbsp;приближении к&nbsp;лимиту (например, 80%&nbsp;от&nbsp;суммы) отправлять пуш, пользователи реже будут упираться в&nbsp;лимит внезапно и&nbsp;реже отключать его из-за неудобства.</p>
+          </div>
+          <div class="case-text">
+            <h3 class="case-label">Аргументы</h3>
+            <ol class="case-list case-body">
+            <li>На вопрос «Что бы вы добавили в настройки лимитов?» (мультивыбор) 35% пользователей лимитов — 16 из 46 — отметили вариант «Уведомления при приближении к лимиту»</li>
+            <li>Уведомление в моменте приближения к лимиту снимает эффект внезапности, пользователь сможет заранее скорректировать траты</li>
+          </ol>
+          </div>
+        </div>
+        <div class="case-phones" data-fit="1158">
+          <img class="phone phone--solid" src="case-1/s6-push.webp" alt="" width="295" height="640" loading="lazy">
+          <img class="phone" src="case-1/s6-push-card.webp" alt="" width="295" height="640" loading="lazy">
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2 class="case-section-title">Новый дизайн</h2>
+        <div class="case-new-design" data-fit="1158">
+          <img class="case-new-design-icons" src="case-1/icons.webp" alt="Набор иконок" width="422" height="274" loading="lazy">
+          <div class="case-new-design-grid">
+            <img class="phone" src="case-1/nd-one.webp" alt="" width="295" height="640" loading="lazy">
+            <img class="phone" src="case-1/nd-two.webp" alt="" width="295" height="640" loading="lazy">
+            <img class="phone" src="case-1/hero-limit.webp" alt="" width="295" height="640" loading="lazy">
+            <img class="phone" src="case-1/nd-eight.webp" alt="" width="295" height="640" loading="lazy">
+            <img class="phone" src="case-1/nd-five.webp" alt="" width="295" height="640" loading="lazy">
+            <img class="phone" src="case-1/nd-seven.webp" alt="" width="295" height="640" loading="lazy">
+            <img class="phone" src="case-1/nd-six.webp" alt="" width="295" height="640" loading="lazy">
+            <img class="phone" src="case-1/autosavings-list.webp" alt="" width="295" height="640" loading="lazy">
+            <img class="phone" src="case-1/nd-three.webp" alt="" width="295" height="640" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2 class="case-section-title">Результат</h2>
+        <div class="case-results">
+          <div class="case-text">
+            <h3 class="case-label">Сделал исследование</h3>
+            <p class="case-body">Провёл 5 интервью и опрос среди 103 человек. Выяснил, что лимиты не популярны, но часть незаинтересованной аудитории всё же можно вовлечь, если позиционировать лимит как способ накопить на цель.</p>
+          </div>
+          <div class="case-text">
+            <h3 class="case-label">Разработал дизайн новой фичи</h3>
+            <p class="case-body">Спроектировал макеты для фичи, которая набрала наибольший отклик среди пользователей лимитов (34 человека из 46), а именно: всё, что удалось сэкономить благодаря лимиту, будет уходить на сберегательный счёт.</p>
+          </div>
+          <div class="case-text">
+            <h3 class="case-label">Снизил вероятность отвала</h3>
+            <p class="case-body">Переработал сценарий превышения лимита. Раньше для этого приходилось снимать лимит целиком — и 39% опрошенныхп потом забывали включить его обратно. Теперь лимит можно оставить включённым, а платёж сверх него провести через дополнительное подтверждение → пользователи не будут лишний раз снимать лимит</p>
+          </div>
+          <div class="case-text">
+            <h3 class="case-label">Поработал с&nbsp;визуалом</h3>
+            <p class="case-body">Предложил несколько лёгких промо-решений для привлечения внимания к лимитам и сделал глоу-ап интерфейса ⋆｡°✩</p>
+          </div>
+        </div>
+      </section>
+
+      <div><a class="button button-big button-dark" href="https://www.figma.com/design/EAk7F6zM6c15Ief7nHnXBM/%D0%A1%D0%B1%D0%B5%D1%80-%E2%80%A2-%D0%A1%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B9-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%BE%D0%B2-%D0%BF%D0%BE-%D0%BA%D0%B0%D1%80%D1%82%D0%B5?node-id=0-1" target="_blank" rel="noopener" data-link="figma"><img src="images/icon-figma.png" alt="" width="24" height="24">КЕЙС В ФИГМЕ</a></div>
+    </main>
+
+    <nav class="case-nav">
+      <div>
+        <a class="button button-middle" href="index.html">← на главную</a>
+        <a class="button button-middle" href="case-2.html">следующий кейс →</a>
+      </div>
+      <div>
+        <a class="button button-middle button-cv" href="#" data-link="cv">cv</a>
+        <a class="button button-middle" href="https://t.me/kolya01101110" target="_blank" rel="noopener" data-link="tg">tg</a>
+      </div>
+    </nav>
+    <script src="js/fit.js"></script>
+    <script src="js/switch.js"></script>
+    <script>
+      // «было / стало»: меняет скриншоты в первой карточке (анимация пилюли — js/switch.js)
+      document.querySelectorAll('[data-before-after]').forEach(box => {
+        const sw = box.querySelector('.switch');
+        // Стартовая позиция пилюли — без анимации. switch.js подключён выше,
+        // поэтому его fonts.ready (расстановка пилюли) срабатывает раньше этого.
+        document.fonts.ready.then(() => {
+          void sw.querySelector('.pill').offsetWidth; // применить позицию, пока переходы выключены
+          sw.classList.add('is-ready');
+        });
+        sw.addEventListener('switch:change', e => {
+          box.querySelectorAll('img[data-before]').forEach(img => { img.src = img.dataset[e.detail.dataset.state]; });
+        });
+      });
+    </script>
+  </body>
+</html>

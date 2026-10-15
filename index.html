@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Николай Грачев — продуктовый дизайнер</title>
+    <meta name="description" content="Продуктовый дизайнер. 6+ лет опыта в B2B и B2C: CRM-системы, сложные интерфейсы для бизнеса и сервисы для массовой аудитории.">
+    <link rel="preload" href="fonts/tt-interphases-pro-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/tt-interphases-pro-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/home.css">
+  </head>
+  <body>
+    <header class="main-header">
+      <a class="main-header-logo" href="index.html" aria-label="На главную">
+        <img src="images/logo.svg" alt="" width="42" height="41">
+      </a>
+      <div class="switch" role="tablist" aria-label="Раздел">
+        <span class="pill" aria-hidden="true"></span>
+        <button class="switch-item is-active" role="tab" aria-selected="true" data-tab="cases">кейсы</button>
+        <button class="switch-item" role="tab" aria-selected="false" data-tab="ui">ui сахар</button>
+      </div>
+      <nav class="header-buttons">
+        <a class="button button-small" href="#" data-link="cv">cv</a>
+        <a class="button button-small" href="https://t.me/kolya01101110" target="_blank" rel="noopener" data-link="tg">tg</a>
+      </nav>
+    </header>
+
+    <main class="container">
+
+      <!-- Таб «кейсы» -->
+      <div data-tab-panel="cases">
+        <section class="hero">
+          <h1 class="text-h1">Продуктовый дизайнер. 6+&nbsp;лет опыта в&nbsp;B2B и&nbsp;B2C. Работал над&nbsp;CRM-системами, сложными интерфейсами для&nbsp;бизнеса и&nbsp;сервисами для&nbsp;массовой аудитории. <span class="text-middle-grey">Умею делать яркий и&nbsp;удобный дизайн.</span></h1>
+          <div class="hero-loom">
+            <button class="hero-loom-button" type="button" aria-haspopup="dialog" aria-controls="video-note" aria-label="Открыть видео-приветствие">
+              <img src="images/ava.png" alt="" width="100" height="100">
+            </button>
+            <p class="text-handwrite-32" aria-hidden="true">it's me</p>
+          </div>
+        </section>
+
+        <section class="works" aria-label="Кейсы">
+          <article class="work">
+            <div class="work-description">
+              <h2 class="text-h2">Провёл исследование на&nbsp;103&nbsp;респондентах и&nbsp;оживил раздел «Лимиты» в&nbsp;зелёном банке</h2>
+              <a class="button button-middle" href="case-1.html">смотреть</a>
+            </div>
+            <a class="work-preview" href="case-1.html" tabindex="-1" aria-hidden="true">
+              <img src="cover/cover-sber.webp" alt="" width="925" height="600" loading="lazy">
+            </a>
+          </article>
+          <article class="work">
+            <div class="work-description">
+              <h2 class="text-h2">Редизайн сервиса email-рассылок&nbsp;→ Остановил падение и&nbsp;вернул рост MAU</h2>
+              <a class="button button-middle" href="case-2.html">смотреть</a>
+            </div>
+            <a class="work-preview" href="case-2.html" tabindex="-1" aria-hidden="true">
+              <img src="cover/cover-email.webp" alt="" width="925" height="600" loading="lazy">
+            </a>
+          </article>
+          <article class="work">
+            <div class="work-description">
+              <h2 class="text-h2">Онбординг CRM: рост конверсии в&nbsp;оплату&nbsp;×2.3</h2>
+              <a class="button button-middle" href="case-3.html">смотреть</a>
+            </div>
+            <a class="work-preview" href="case-3.html" tabindex="-1" aria-hidden="true">
+              <img src="cover/cover-simla.webp" alt="" width="925" height="600" loading="lazy">
+            </a>
+          </article>
+          <article class="work">
+            <div class="work-description">
+              <h2 class="text-h2">8&nbsp;ярких UI-работ, на&nbsp;которые приятно смотреть</h2>
+              <a class="button button-middle" href="#ui" data-switch-to="ui">смотреть</a>
+            </div>
+            <a class="work-preview work-preview--violet" href="#ui" data-switch-to="ui" tabindex="-1" aria-hidden="true">
+              <img src="cover/cover-chat.webp" alt="" width="925" height="600" loading="lazy">
+            </a>
+          </article>
+        </section>
+      </div>
+
+      <!-- Таб «ui сахар» -->
+      <div data-tab-panel="ui" hidden>
+        <section class="shots" aria-label="UI-работы">
+          <div class="shot" data-fit="1392" style="--shot-bg: #ECF7F7">
+            <img class="shot-img shot-img--banner" src="ui/ui-1.webp" alt="" width="1114" height="360" loading="lazy">
+          </div>
+          <div class="shot" data-fit="1392" style="--shot-bg: #F6F5F3; --shot-stroke: rgba(255, 255, 255, 0.6); --shot-radius: 20px">
+            <img class="shot-img shot-img--desktop" src="ui/ui-2.webp" alt="" width="955" height="620" loading="lazy">
+          </div>
+          <div class="shot" data-fit="1392" style="--shot-bg: #F1F3FB; --shot-stroke: rgba(255, 255, 255, 0.3)">
+            <img class="shot-img shot-img--phone" src="ui/ui-3-1.webp" alt="" width="285" height="620" loading="lazy">
+            <img class="shot-img shot-img--phone" src="ui/ui-3-2.webp" alt="" width="285" height="620" loading="lazy">
+            <img class="shot-img shot-img--phone" src="ui/ui-3-3.webp" alt="" width="285" height="620" loading="lazy">
+          </div>
+          <div class="shot" data-fit="1392" style="--shot-bg: #000000">
+            <img class="shot-img shot-img--showcase" src="ui/ui-4.webp" alt="" width="1093" height="710" loading="lazy">
+          </div>
+          <div class="shot" data-fit="1392" style="--shot-bg: #000000; --shot-stroke: #0A0A0E">
+            <img class="shot-img shot-img--desktop" src="ui/ui-5.webp" alt="" width="955" height="620" loading="lazy">
+          </div>
+          <div class="shot" data-fit="1392" style="--shot-bg: #EFEFF1; --shot-stroke: rgba(255, 255, 255, 0.4)">
+            <img class="shot-img shot-img--phone" src="ui/ui-6-1.webp" alt="" width="285" height="620" loading="lazy">
+            <img class="shot-img shot-img--phone" src="ui/ui-6-2.webp" alt="" width="285" height="620" loading="lazy">
+            <img class="shot-img shot-img--phone" src="ui/ui-6-3.webp" alt="" width="285" height="620" loading="lazy">
+          </div>
+          <div class="shot" data-fit="1392" style="--shot-bg: #F7F4F3; --shot-stroke: rgba(255, 255, 255, 0.6)">
+            <img class="shot-img shot-img--phone" src="ui/ui-7-1.webp" alt="" width="285" height="620" loading="lazy">
+            <img class="shot-img shot-img--phone" src="ui/ui-7-2.webp" alt="" width="285" height="620" loading="lazy">
+            <img class="shot-img shot-img--phone" src="ui/ui-7-3.webp" alt="" width="285" height="620" loading="lazy">
+          </div>
+          <div class="shot" data-fit="1392" style="--shot-bg: #F4F4F5; --shot-stroke: rgba(255, 255, 255, 0.4); --shot-radius: 24px">
+            <img class="shot-img shot-img--desktop" src="ui/ui-8.webp" alt="" width="955" height="620" loading="lazy">
+          </div>
+        </section>
+      </div>
+
+      <footer class="main-footer">
+        <p class="text-mono-16">Открыт к&nbsp;новым проектам. Лучше всего раскрываюсь в&nbsp;командах, где&nbsp;дизайн влияет на&nbsp;бизнес и&nbsp;любят смелые идеи</p>
+        <img class="main-footer-logo" src="images/logo-footer.png" alt="Let’s Work — Product Design" width="212" height="110">
+        <div class="main-footer-buttons">
+          <a class="button button-middle button-fixed-92" href="#" data-link="cv">cv</a>
+          <a class="button button-middle button-fixed-92" href="https://t.me/kolya01101110" target="_blank" rel="noopener" data-link="tg">tg</a>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Видео-кружок (как в Telegram). Пока картинка; видео: заменить <img> на
+         <video src="..." playsinline preload="metadata"></video> — прогресс и play/pause подхватятся сами -->
+    <dialog class="video-note" id="video-note" aria-label="Видео-приветствие">
+      <header class="main-header">
+        <img class="video-note-logo" src="images/logo.svg" alt="" width="42" height="41">
+        <button class="button button-small video-note-close" type="button" data-close>закрыть</button>
+      </header>
+      <div class="video-note-stage">
+        <div class="video-note-circle">
+          <img class="video-note-media" src="images/ava-video.webp" alt="Николай Грачев" width="680" height="680">
+          <svg class="video-note-progress" viewBox="0 0 680 680" aria-hidden="true">
+            <circle cx="340" cy="340" r="337" pathLength="100"/>
+          </svg>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="js/fit.js"></script>
+    <script src="js/switch.js"></script>
+    <script src="js/video-note.js"></script>
+  </body>
+</html>

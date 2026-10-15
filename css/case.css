@@ -1,0 +1,353 @@
+/* Страницы кейсов — фреймы case-1, case-2, case-3 (1440) */
+.case {
+  width: min(1158px, 100% - 2 * var(--page-padding));
+  margin: 0 auto;
+  padding-top: 224px;          /* 24 + шапка 40 + 160 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 120px;
+}
+.case-title {
+  width: min(926px, 100%);
+  text-align: center;
+}
+
+/* Текстовые блоки 692px */
+.case-text {
+  width: min(692px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.case-text--gap-16 { gap: 16px; }
+.case-col { width: min(692px, 100%); }   /* одиночный абзац в колонке 692 */
+.case-label {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  line-height: 1.2;
+  color: #7FB3A7;
+  text-transform: uppercase;
+}
+.case-lead {                  /* 32 / 150% */
+  font-size: 32px;
+  line-height: 1.5;
+}
+.case-body {                  /* 24 / 150% */
+  font-size: 24px;
+  line-height: 1.5;
+}
+.case-small {                 /* 20 / 150% */
+  font-size: 20px;
+  line-height: 1.5;
+}
+.case-list {
+  margin: 0;
+  padding-left: 0;            /* номера висят слева за колонкой, текст на всю ширину — как в Figma */
+}
+.case-list > li + li { margin-top: 12px; }
+.case-list--tight > li + li { margin-top: 0; }
+.case-caption {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #7FB3A7;
+  text-align: center;
+}
+
+/* Карточки «выгода бизнесу» и т. п. */
+.case-notes {
+  width: min(692px, 100%);   /* обёртка по колонке 692 — иначе тянется на 1158 и карточки уезжают влево */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.case-note {
+  width: min(692px, 100%);
+  padding: 40px 60px;
+  border-radius: var(--radius-card);
+  background-color: var(--light-grey);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Чипсы процесса */
+.case-chips {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: chip;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.case-chips > li {
+  counter-increment: chip;
+  padding: 4px 24px 6px 16px;
+  border-radius: var(--radius-pill);
+  box-shadow: inset 0 0 0 0.5px rgba(37, 31, 46, 0.24);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  font-size: 24px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.case-chips > li::before {
+  content: counter(chip) ".";
+  display: inline-block;
+  width: 1.5em;
+  text-align: right;
+  padding-right: 0.35em;
+}
+
+/* Решение: текст 692 + медиа 1158 */
+.case-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.case-section-text {
+  width: min(692px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.case-section-title {
+  font-family: var(--font-mono);
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+
+/* Картинки на всю ширину */
+.case-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+}
+
+/* Карточка с телефонами */
+.case-phones {
+  position: relative;
+  width: 100%;
+  height: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  overflow: hidden;
+  border-radius: calc(var(--radius-card) / var(--fit, 1)); /* при уменьшении (js/fit.js) скругление остаётся 20 */
+  background-color: var(--light-grey);
+}
+.phone {
+  display: block;
+  flex-shrink: 0;
+  width: 295.21px;
+  height: 640px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.6);  /* Stroke Outside 10px */
+}
+.phone--solid { box-shadow: 0 0 0 10px #FFFFFF; }
+
+/* Кейс 1: первый экран с переключателем «было / стало» */
+.case-hero-media {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.case-phones--hero {
+  /* 1052 и 130 на десктопе; при уменьшении блока (js/fit.js) свич остаётся
+     в натуральную величину, поэтому место под него добавляется отдельно */
+  height: calc(972px + 80px / var(--fit, 1));
+  align-items: flex-start;
+  padding-top: calc(50px + 80px / var(--fit, 1)); /* тогл 40 + 40 + 40 до обводки 10 */
+}
+.case-phones--hero .phone {
+  width: 393px;
+  height: 852px;
+  border-radius: 40px;
+}
+.case-phones--hero .switch {
+  zoom: calc(1 / var(--fit, 1));  /* не уменьшается вместе с блоком */
+  position: absolute;
+  top: calc(40px * var(--fit, 1));
+  left: 50%;
+  translate: -50% 0;
+  width: 152px;
+  justify-content: center;
+}
+.case-media-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Кейс 1: коллаж исследования */
+.case-research {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.case-research-cta {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.case-research-cta .case-caption { width: min(572px, 100%); }
+.case-research > img { height: auto; }
+
+/* Кейс 1: рукописная подпись на решении 5 */
+.case-annotation {
+  position: absolute;
+  margin: 0;
+  font-family: var(--font-hand);
+  font-size: 32px;
+  line-height: 15.023px;
+  letter-spacing: 0.32px;
+  color: #FF0000;
+  white-space: nowrap;
+}
+.case-annotation--text  { left: 815.3px; top: 230.62px; translate: -50% 0; }
+.case-annotation--arrow { left: 736.69px; top: 255.47px; translate: -50% -50%; rotate: 150deg; }
+
+/* Кейс 1: новый дизайн */
+.case-new-design {
+  position: relative;
+  width: 100%;
+  height: 2555px;
+  overflow: hidden;
+  border-radius: calc(var(--radius-card) / var(--fit, 1));
+  background-color: var(--light-grey);
+}
+.case-new-design-icons {
+  position: absolute;
+  left: 379px;
+  top: 80px;
+  width: 422px;
+  height: 274px;
+}
+.case-new-design-grid {
+  position: absolute;
+  top: 434.62px;
+  left: 50%;
+  translate: -50% 0;
+  width: 1005px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+.case-new-design-grid .phone { width: 295px; }
+
+/* Кейс 3: до / после */
+.case-compare {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.case-compare > figure {
+  flex: 1 1 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.case-compare figcaption {
+  font-size: 32px;
+  line-height: 1.5;
+}
+.case-compare figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.case-compare figure img.is-old { opacity: 0.4; }
+.case-compare-arrow {
+  position: absolute;
+  left: 50%;
+  top: 14.62px;
+  translate: -50% 0;
+  width: 244px;
+  height: 13px;
+}
+
+.case-results {
+  width: min(692px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.case-results p + p { margin-top: 0; }
+.case-paragraphs > p + p { margin-top: 1.5em; } /* пустая строка между абзацами */
+
+/* Нижняя навигация */
+.case-nav {
+  margin-top: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--page-padding) var(--page-padding);
+}
+.case-nav > div { display: flex; gap: 8px; }
+.case-nav .button-cv { width: 81px; padding-inline: 0; }
+
+/* ——— Адаптив кейсов ——— */
+@media (max-width: 1023px) {
+  .case { padding-top: 184px; gap: 96px; }
+  .case-section,
+  .case-section-text { gap: 32px; }
+  .case-media-block { gap: 32px; }
+
+  .case-label { font-size: 20px; }
+  .case-lead { font-size: 28px; }
+  .case-body,
+  .case-chips > li { font-size: 22px; }
+  .case-small,
+  .case-caption { font-size: 18px; }
+  .case-section-title { font-size: 32px; }
+  .case-note { padding: 40px 48px; }
+
+  .case-nav { margin-top: 120px; }
+}
+@media (max-width: 767px) {
+  .case { padding-top: 120px; gap: 64px; }
+  .case-section,
+  .case-section-text { gap: 24px; }
+  .case-media-block { gap: 24px; }
+
+  .case-label { font-size: 16px; }
+  .case-lead { font-size: 22px; }
+  .case-body { font-size: 18px; }
+  .case-small,
+  .case-caption,
+  .case-chips > li { font-size: 16px; }
+  .case-section-title { font-size: 24px; }
+  .case-note { padding: 24px 20px; }
+
+  /* номера списков внутри колонки — иначе уходят за край экрана */
+  .case-list { padding-left: 1.4em; }
+  .case-chips > li { white-space: normal; }
+
+  .case .button-big { height: 80px; padding-inline: 40px; }
+
+  /* Нижняя навигация столбиком: «на главную», «следующий кейс», ниже cv и tg пополам */
+  .case-nav { margin-top: 80px; flex-direction: column; align-items: stretch; gap: 8px; }
+  .case-nav > div:first-child { flex-direction: column; }
+  .case-nav > div:last-child { display: grid; grid-template-columns: 1fr 1fr; }
+  .case-nav .button-cv { width: auto; }
+}

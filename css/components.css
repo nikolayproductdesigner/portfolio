@@ -1,0 +1,166 @@
+/* Кнопки — компонент «Frame 3» из ui kit */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 32px 6px;
+  border: none;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--stroke-inside), var(--shadow-inset);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+/* small: 40px, полупрозрачная с блюром (шапка) */
+.button-small {
+  height: 40px;
+  background-color: rgba(236, 247, 247, 0.8);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+}
+.button-small:hover  { background-color: rgba(219, 240, 240, 0.8); }
+.button-small:active { background-color: rgba(201, 232, 232, 0.8); }
+
+/* middle: 52px, сплошная (карточки, футер) */
+.button-middle {
+  height: 52px;
+  background-color: var(--light-grey);
+}
+.button-middle:hover  { background-color: var(--light-grey-hover); }
+.button-middle:active { background-color: var(--light-grey-active); }
+
+.button-fixed-92 { width: 92px; padding-inline: 0; }
+
+/* «← на главную» в шапке кейсов — поуже: слева 16, справа 20 */
+.button-back { padding-inline: 16px 20px; }
+
+/* Segment control — «Frame 1» */
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--stroke-inside);
+  background: rgba(244, 255, 246, 0.8);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--black);
+  box-shadow: var(--shadow-inset);
+  transition: translate 280ms cubic-bezier(.4, 0, .2, 1),
+              width 300ms cubic-bezier(.34, 1.3, .64, 1) 0.22s;
+}
+.pill.is-moving {
+  animation: pill-squish 520ms linear;
+}
+@keyframes pill-squish {
+  0%   { scale: 1 1; }
+  58%  { scale: 1 1; }
+  76%  { scale: .97 1.01; }
+  100% { scale: 1 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pill { transition: none; }
+  .pill.is-moving { animation: none; }
+}
+.switch-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 4px 16px 6px;
+  border: none;
+  background: none;
+  border-radius: var(--radius-pill);
+  color: var(--black);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .3s ease;
+}
+.switch-item.is-active {
+  color: #FFFFFF;
+  cursor: default;
+}
+
+/* Шапка */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: var(--page-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;   /* прозрачные зоны шапки не перехватывают клики */
+}
+.main-header > * { pointer-events: auto; }
+/* Свич «кейсы / ui сахар» — по центру страницы, а не между логотипом и cv/tg
+   (они разной ширины, и во флексе свич кренило влево). На мобилке — во флексе, справа */
+@media (min-width: 768px) {
+  .main-header > .switch {
+    position: absolute;
+    top: var(--page-padding);
+    left: 50%;
+    translate: -50% 0;
+  }
+}
+.main-header-logo img { width: 42px; height: 41px; }
+.header-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+/* big: 100px, кнопки «СРАЗУ В ФИГМУ», «ВСЕ АРТЕФАКТЫ» */
+.button-big {
+  height: 100px;
+  gap: 10px;
+  padding: 4px 60px 6px;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--light-grey);
+}
+.button-big:hover  { background-color: var(--light-grey-hover); }
+.button-big:active { background-color: var(--light-grey-active); }
+.button-big > img { width: 24px; height: 24px; }
+
+/* dark — тёмный вариант из ui kit */
+.button-dark {
+  color: var(--white);
+  background-color: var(--black);
+  box-shadow: var(--stroke-inside),
+              inset 0 4px 12px 0 rgba(255, 255, 255, 0.16),
+              inset 0 -4px 12px 0 #18141E;
+}
+.button-dark:hover  { background-color: #110E15; }
+.button-dark:active { background-color: #000000; }
+
+/* Переключатель «было / стало» — segment control (анимация из js/switch.js) с фоном и тенью тогла */
+.switch--toggle {
+  background: rgba(236, 247, 247, 0.8);
+  box-shadow: var(--stroke-inside), var(--shadow-inset);
+}
+/* Пока пилюля не встала на стартовую позицию — без анимации (иначе при загрузке она «едет» к «стало») */
+.switch--toggle:not(.is-ready) .pill { transition: none; }
+
+/* Очень узкие экраны (<360): cv/tg в шапке кейсов поуже, чтобы влезали рядом с «на главную» */
+@media (max-width: 359px) {
+  .header-buttons .button { padding-inline: 20px; }
+}

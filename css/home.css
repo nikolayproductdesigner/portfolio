@@ -1,0 +1,267 @@
+/* Главная — фрейм «main» 1440 */
+.container {
+  padding: 0 var(--page-padding) var(--page-padding);
+}
+
+/* Hero: текст начинается на 331px от верха страницы, низ текста выровнен с аватаркой */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  column-gap: 80px;      /* текст не заходит под подпись «it's me» на узких экранах */
+  padding-top: 331px;
+}
+.hero > h1 {
+  max-width: 923px;
+}
+.hero-loom {
+  position: relative;
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 0.36px; /* низ аватарки на 570.64 при низе текста 571 */
+}
+.hero-loom-button {
+  display: block;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+}
+@media (hover: hover) {
+  .hero-loom-button:hover { transform: scale(1.04); }
+}
+.hero-loom-button img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-loom-button { transition: none; }
+}
+.hero-loom > p {
+  position: absolute;
+  left: -14px;           /* центр подписи относительно левого верхнего угла аватарки */
+  top: -1.5px;
+  translate: -50% -50%;
+  rotate: -45deg;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Табы, которые переключает segment control */
+[data-tab-panel][hidden] { display: none; }
+
+/* Кейсы */
+.works {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gap);
+  margin-top: 80px;
+}
+.work {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--grid-gap);
+  align-items: start;
+}
+.work-description {
+  grid-column: 1 / 5;
+  max-width: 336px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.work-preview {
+  grid-column: 5 / 13;
+  display: block;
+  aspect-ratio: 925 / 600;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background-color: var(--light-grey);
+  transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+}
+/* Ховер: обложка целиком (фон + картинка) чуть растёт; transform не влияет на раскладку, соседи не сдвигаются */
+@media (hover: hover) {
+  .work-preview:hover { transform: scale(1.01); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-preview { transition: none; }
+}
+.work-preview--violet { background-color: var(--light-violet); }
+.work-preview > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Футер */
+.main-footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: var(--grid-gap); /* футер — последний элемент колонки кейсов с gap 8 */
+  padding-top: 160px;
+}
+.main-footer > p {
+  width: 340px;
+}
+.main-footer-buttons {
+  display: flex;
+  gap: 4px;
+}
+.main-footer-logo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 212px;
+  height: 110px;
+}
+
+/* Таб «ui сахар» — фрейм «ui». Шоты 1392×800, картинка по центру */
+.shots {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gap);
+  padding-top: var(--page-padding); /* первый шот на 24px от верха, шапка лежит поверх */
+}
+.shot {
+  --shot-bg: var(--light-grey);
+  --shot-stroke: transparent;   /* обводка 8px снаружи картинки, как Stroke Outside в Figma */
+  --shot-radius: 28px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  overflow: hidden;
+  border-radius: calc(var(--radius-card) / var(--fit, 1)); /* при уменьшении (js/fit.js) скругление остаётся 20 */
+  background-color: var(--shot-bg);
+}
+.shot-img {
+  display: block;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: var(--shot-radius);
+  box-shadow: 0 0 0 8px var(--shot-stroke);
+}
+.shot-img--phone    { width: 285.17px;  height: 620px; }
+.shot-img--desktop  { width: 954.62px;  height: 620px; }
+.shot-img--banner   { width: 1114.29px; height: 360px; border-radius: 0; box-shadow: none; }
+.shot-img--showcase { width: 1093.2px;  height: 710px; border-radius: 0; box-shadow: none; }
+
+/* Видео-кружок — Figma «video» 759:7309 */
+html:has(.video-note[open]) { overflow: hidden; }
+.video-note {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+.video-note::backdrop {
+  background-color: rgba(244, 255, 246, 0.8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.video-note-logo { width: 42px; height: 41px; }
+.video-note-close { padding-inline: 24px; }
+.video-note-stage {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-note-circle {
+  --progress: 0;          /* 0…1, ставит js/video-note.js */
+  position: relative;
+  width: min(680px, calc(100vw - 2 * var(--page-padding)), calc(100dvh - 176px));
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.video-note-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Прогресс: полоса 6px по внешнему краю, старт сверху, по часовой */
+.video-note-progress {
+  position: absolute;
+  inset: 0;
+  rotate: -90deg;
+  pointer-events: none;
+}
+.video-note-progress circle {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 6;
+  stroke-dasharray: 100;
+  stroke-dashoffset: calc(100 - var(--progress) * 100);
+}
+
+/* Появление */
+.video-note[open] .video-note-circle { animation: video-note-in .35s cubic-bezier(.2, 0, 0, 1); }
+.video-note[open]::backdrop { animation: video-note-fade .25s ease; }
+@keyframes video-note-in { from { opacity: 0; scale: .92; } }
+@keyframes video-note-fade { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .video-note[open] .video-note-circle,
+  .video-note[open]::backdrop { animation: none; }
+}
+
+/* ——— Адаптив главной ——— */
+@media (max-width: 1023px) {
+  /* Hero: только текст, кружка с «it's me» (и открытия видео) в адаптиве нет */
+  .hero { padding-top: 200px; }
+  .hero-loom { display: none; }
+
+  /* Карточки в одну колонку: текст, под ним обложка */
+  .works { margin-top: 64px; gap: 64px; }
+  .work { display: flex; flex-direction: column; gap: 24px; }
+  .work-description { max-width: 560px; }
+  /* «смотреть» не показываем — жмут на обложку. Кнопка остаётся для клавиатуры
+     и скринридеров (у обложки aria-hidden) и появляется при фокусе с Tab */
+  .work-description > .button:not(:focus-visible) {
+    position: absolute;
+    width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .work-description .text-h2 { font-size: 24px; }
+  .work-preview { width: 100%; }
+
+  /* Футер: текст сверху, ниже кнопки и логотип */
+  .main-footer {
+    flex-wrap: wrap;
+    row-gap: 40px;
+    margin-top: 0;
+    padding-top: 120px;
+  }
+  .main-footer > p { width: 100%; max-width: 340px; }
+  .main-footer-logo { position: static; translate: none; order: 1; }
+}
+@media (max-width: 767px) {
+  /* Шапка главной: логотип и свич; cv и tg есть в футере. В кейсах cv/tg остаются */
+  .header-buttons { display: none; }
+
+  .hero { padding-top: 136px; }
+
+  .works { margin-top: 48px; gap: 48px; }
+  .work { gap: 20px; }
+  .work-description .text-h2 { font-size: 20px; }
+
+  .main-footer { padding-top: 96px; }
+  .main-footer-logo { width: 160px; height: auto; }
+}

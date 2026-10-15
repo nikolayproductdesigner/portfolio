@@ -1,0 +1,35 @@
+/* Дизайн-токены. Значения из Figma (Portfolio — autumn 2026). */
+:root {
+  /* цвета */
+  --white: #F4FFF6;        /* фон страницы */
+  --black: #251F2E;        /* основной текст, активная пилюля */
+  --light-grey: #ECF7F7;   /* фон кнопок и карточек */
+  --light-grey-hover: #DBF0F0;
+  --light-grey-active: #C9E8E8;
+  --light-violet: #F7F6F9; /* фон карточки «ui-сахар» */
+  --middle-grey: #9FC6BD;  /* акцентная часть заголовка */
+  --blue: #4920FF;         /* рукописная подпись */
+  --border: rgba(37, 31, 46, 0.12);
+
+  /* шрифты */
+  --font-sans: "TT Interphases Pro", system-ui, sans-serif;
+  --font-mono: "TT Interphases Pro Mono", ui-monospace, monospace;
+  --font-hand: "Nothing You Could Do", cursive;
+
+  /* эффекты */
+  --shadow-inset: inset 0 4px 8px 0 rgba(255, 255, 255, 0.20),
+                  inset 0 -4px 8px 0 rgba(37, 31, 46, 0.04);
+  --stroke-inside: inset 0 0 0 0.5px var(--border); /* обводка внутрь, как в Figma */
+  --blur: blur(4px);
+
+  /* сетка и отступы */
+  --page-padding: 24px;
+  --grid-gap: 8px;
+  --radius-card: 20px;
+  --radius-pill: 100px;
+}
+
+/* Адаптив: десктоп ≥1024 (тянется на всю ширину), планшет 768–1023, мобилка ≤767 */
+@media (max-width: 767px) {
+  :root { --page-padding: 16px; }
+}

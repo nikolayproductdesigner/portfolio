@@ -1,0 +1,340 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --white: #F4FFF6;
+    --black: #251F2E;
+    --light-grey: #ECF7F7;
+    --middle-grey: #9FC6BD;
+    --blue: #4920FF;
+    --block-gap: 160px;
+  }
+@font-face {
+    font-family: 'TT Interphases Pro Mono Regular';
+    src: url('fonts/TT\ Interphases\ Pro\ Mono\ Trial\ Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+@font-face {
+    font-family: 'TT Interphases Pro Regular';
+    src: url('fonts/TT\ Interphases\ Pro\ Trial\ Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+@font-face {
+    font-family: 'TT Interphases Pro Medium';
+    src: url('fonts/TT\ Interphases\ Pro\ Trial\ Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+}
+@font-face {
+    font-family: 'Nothing You Could Do';
+    src: url('fonts/NothingYouCouldDo-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+body {
+    margin: 0;
+    background-color: var(--white);
+}
+html {
+    scroll-behavior: smooth;
+}
+img { 
+    display: block; max-width: 100%; 
+}
+section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 8px;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h1 {
+    font-family: "TT Interphases Pro Mono Regular";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -1.6px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h2 {
+    font-family: "TT Interphases Pro Mono Regular";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.8px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.text-16 {
+    font-family: "TT Interphases Pro Regular";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+.text-16-accent {
+    font-family: "TT Interphases Pro Medium";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+}
+.text-handwrite-32 {
+    font-family: "Nothing You Could Do";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -4%;
+    color: var(--blue);
+}
+.text-mono-16 {
+    font-family: "TT Interphases Pro Mono Regular";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.4px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.text-middle-grey {
+    color: var(--middle-grey);
+}
+.container {
+    position: relative;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--block-gap);
+}
+.button-small {
+    display: flex;
+    height: 40px;
+    padding: 4px 32px 6px 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: "TT Interphases Pro Regular";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+.button-middle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 32px 4px 32px;
+    font-family: "TT Interphases Pro Regular";
+    font-size: 16px;
+    line-height: 150%;
+}
+.button-secondary {
+    border-radius: 100px;
+    border: 0.5px solid rgba(37, 31, 46, 0.12);
+    background: rgba(236, 247, 247, 0.80);
+    transition: background-color .2s ease;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.20) inset, 0 -4px 8px 0 rgba(37, 31, 46, 0.04) inset;
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+}
+.button-secondary:hover {
+    background: rgba(219, 240, 240, 0.80);
+}
+.button-secondary:active {
+    background: rgba(201, 232, 232, 0.80);
+}
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 100px;
+  border: 0.5px solid rgba(37, 31, 46, 0.12);
+  background: rgba(236, 247, 247, 0.80);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.20) inset,
+              0 -4px 8px 0 rgba(37, 31, 46, 0.04) inset;
+  font-family: "TT Interphases Pro Regular";
+  font-size: 16px;
+  line-height: 150%;
+}
+.pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  border-radius: 100px;
+  background: var(--black);
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.20) inset,
+              0 -4px 8px 0 rgba(37, 31, 46, 0.04) inset;
+  transition: translate 280ms cubic-bezier(.4, 0, .2, 1),
+              width 300ms cubic-bezier(.34, 1.3, .64, 1) 0.22s;
+}
+.pill.is-moving {
+  animation: pill-squish 520ms linear;
+}
+@keyframes pill-squish {
+    0%   { scale: 1 1; }
+    58%  { scale: 1 1; }
+    76%  { scale: .97 1.01; }
+    100% { scale: 1 1; }
+  }
+@media (prefers-reduced-motion: reduce) {
+  .pill {
+    transition: none;
+  }
+  .pill.is-moving {
+    animation: none;
+  }
+}
+.switch-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 16px 3px 16px;
+  border: none;
+  background: none;
+  border-radius: 100px;
+  font: inherit;
+  color: var(--black);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .3s ease;
+}
+
+.switch-item.is-active {
+  color: var(--white);
+}
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.main-header-logo img { 
+    width: 40px; height: auto; 
+}
+.header-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+.main-header > .switch {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+/*hero*/
+.hero {
+    height: 70vh;
+}
+.hero > h1 {
+    align-self: end;
+    grid-column: 1 / 9;
+}
+.hero-loom {
+    position: relative;
+    align-self: end;
+    justify-self: end;
+    grid-column: 12;
+    width: 100px;
+    height: 100px;
+    background: url(images/ava.png) center / contain no-repeat;
+}
+.hero-loom > p {
+    position: absolute;
+    bottom: 120%;
+    right: 30%;
+    margin: 0;
+    white-space: nowrap;
+    transform: rotate(-30deg);
+    transform-origin: bottom right;
+}
+/*works*/
+.works-one {
+    grid-column: 1 / 13;
+  
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 8px;
+}
+.works-description {
+    grid-column: 1 / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.works-description-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.works > div > .works-description > .button-middle {
+    align-self: flex-start;
+}
+.works-preview {
+    grid-column: 5 / 13;
+    width: 100%;
+    aspect-ratio: 925 / 600;
+    background-color: var(--light-grey);
+    border-radius: 20px;
+}
+.works-preview > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*main-footer*/
+.main-footer {
+    height: 252px;
+}
+.main-footer > h2 {
+    grid-column: 1 / 4;
+    align-self: flex-start;
+}
+.main-footer-mark {
+    grid-column: 1 / 4;
+    align-self: flex-end;
+}
+.main-footer-buttons {
+    grid-column: 5 / 13;
+    justify-self: end;
+    align-self: flex-end;
+}
+
+/*case-text*/
+.case-text > h1 {
+    grid-column: 4 / 10;
+    text-align: center;
+}
+.case-image-frame {
+    grid-column: 2 / 12;
+    border-radius: 20px;
+    background-color: var(--light-grey);
+    width: 100%;
+    min-height: 800px;
+}
