@@ -26,6 +26,7 @@
 - Локальный сервер: `.claude/launch.json` → `python3 -m http.server 8080`.
 - CV (`data-link="cv"`, все страницы): https://drive.google.com/file/d/1xHJryMdsmioFay20EzBZMsBdah8leiih/view. Figma-кнопки (`data-link="figma"`) есть только в case-1, все три ведут в файл `EAk7F6zM6c15Ief7nHnXBM` («Сбер • Сценарий изменения лимитов по карте»). Telegram: https://t.me/kolya01101110.
 - Аватарка `images/ava.png` 100×100 — Коля заменит сам.
+- Яндекс.Метрика (счётчик 113677863) — в `<head>` всех страниц сразу после `meta robots`. Новые страницы — тоже со счётчиком.
 - Индексация закрыта: `<meta name="robots" content="noindex, nofollow">` во всех страницах (robots.txt намеренно не делаем — с Disallow поисковик не увидит noindex). Новые страницы — тоже с этим мета.
 - Аватарка + «it's me» на главной (`.hero-loom`) временно скрыты атрибутом `hidden` — вернуть: убрать `hidden` и комментарий в index.html.
 - Видео-кружок (Figma 759:7309, только десктоп ≥1024 — в адаптиве аватарки с «it's me» нет): клик по аватарке на главной → `<dialog class="video-note">`, логика в `js/video-note.js`. Пока заглушка `images/ava-video.webp` (1360², исходник в `_sources/images/`) и фейковый прогресс 20 с. Видео: заменить `<img class="video-note-media">` на `<video class="video-note-media" src="…" playsinline preload="metadata">` — прогресс и пауза по клику подхватятся.
