@@ -14,15 +14,13 @@
   cursor: pointer;
   transition: background-color .2s ease;
 }
-/* small: 40px, полупрозрачная с блюром (шапка) */
+/* small: 56px, сплошная (шапка) */
 .button-small {
-  height: 40px;
-  background-color: rgba(236, 247, 247, 0.8);
-  -webkit-backdrop-filter: var(--blur);
-  backdrop-filter: var(--blur);
+  height: var(--header-height);
+  background-color: var(--light-grey);
 }
-.button-small:hover  { background-color: rgba(219, 240, 240, 0.8); }
-.button-small:active { background-color: rgba(201, 232, 232, 0.8); }
+.button-small:hover  { background-color: var(--light-grey-hover); }
+.button-small:active { background-color: var(--light-grey-active); }
 
 /* middle: 52px, сплошная (карточки, футер) */
 .button-middle {
@@ -33,9 +31,6 @@
 .button-middle:active { background-color: var(--light-grey-active); }
 
 .button-fixed-92 { width: 92px; padding-inline: 0; }
-
-/* «← на главную» в шапке кейсов — поуже: слева 16, справа 20 */
-.button-back { padding-inline: 16px 20px; }
 
 /* Segment control — «Frame 1» */
 .switch {
@@ -49,7 +44,7 @@
   -webkit-backdrop-filter: var(--blur);
   backdrop-filter: var(--blur);
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.5;
 }
 .pill {
@@ -82,8 +77,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 32px;
-  padding: 4px 16px 6px;
+  height: 48px;
+  padding: 4px 24px 6px;
   border: none;
   background: none;
   border-radius: var(--radius-pill);
@@ -121,10 +116,10 @@
     translate: -50% 0;
   }
 }
-.main-header-logo img { width: 42px; height: 41px; }
+.main-header-logo img { width: 56px; height: 54px; }
 .header-buttons {
   display: flex;
-  gap: 4px;
+  gap: 8px;
 }
 
 /* big: 100px, кнопки «СРАЗУ В ФИГМУ», «ВСЕ АРТЕФАКТЫ» */
@@ -152,15 +147,16 @@
 .button-dark:hover  { background-color: #110E15; }
 .button-dark:active { background-color: #000000; }
 
-/* Переключатель «было / стало» — segment control (анимация из js/switch.js) с фоном и тенью тогла */
-.switch--toggle {
-  background: rgba(236, 247, 247, 0.8);
-  box-shadow: var(--stroke-inside), var(--shadow-inset);
+/* Мобилка: шапка ниже (48), кнопки и свич компактнее, чтобы всё влезало в 320–375 */
+@media (max-width: 767px) {
+  :root { --header-height: 48px; }
+  .main-header .button { padding-inline: 20px; font-size: 16px; }
+  .main-header .button-fixed-92 { width: auto; }
+  .main-header-logo img { width: 48px; height: 46px; }
+  .main-header .switch { font-size: 16px; }
+  .main-header .switch-item { height: 40px; padding-inline: 16px; }
 }
-/* Пока пилюля не встала на стартовую позицию — без анимации (иначе при загрузке она «едет» к «стало») */
-.switch--toggle:not(.is-ready) .pill { transition: none; }
-
-/* Очень узкие экраны (<360): cv/tg в шапке кейсов поуже, чтобы влезали рядом с «на главную» */
 @media (max-width: 359px) {
-  .header-buttons .button { padding-inline: 20px; }
+  .main-header .button { padding-inline: 16px; }
+  .main-header .switch-item { padding-inline: 12px; }
 }

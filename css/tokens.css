@@ -24,8 +24,10 @@
 
   /* сетка и отступы */
   --page-padding: 24px;
+  --header-height: 56px;
   --grid-gap: 8px;
   --radius-card: 20px;
+  --radius-media: 24px;    /* обложки, шоты, крупные картинки */
   --radius-pill: 100px;
 }
 

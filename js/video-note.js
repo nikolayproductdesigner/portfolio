@@ -2,8 +2,12 @@
 // Пока вместо видео картинка — прогресс-бар имитирует воспроизведение.
 // Когда появится видео, замени <img class="video-note-media"> на <video class="video-note-media">:
 // прогресс пойдёт по реальному времени, клик по кружку — пауза / продолжить.
+// Превью в аватарке: <video class="hero-loom-media" autoplay muted loop playsinline> —
+// играет без звука, синяя дуга показывает прогресс; пока открыт кружок, превью на паузе.
 const dialog = document.querySelector('.video-note');
-const opener = document.querySelector('.hero-loom-button');
+const opener = document.querySelector('.hero-loom');
+const preview = opener.querySelector('video.hero-loom-media');
+const previewRing = opener.querySelector('.hero-loom-ring');
 const circle = dialog.querySelector('.video-note-circle');
 const video = dialog.querySelector('video.video-note-media');
 
@@ -26,6 +30,7 @@ function startFake() {
 }
 
 function open() {
+  if (preview) preview.pause();
   dialog.showModal();
   setProgress(0);
   if (video) {
@@ -40,6 +45,7 @@ function reset() {
   cancelAnimationFrame(rafId);
   if (video) video.pause();
   setProgress(0);
+  if (preview) preview.play().catch(() => {});
 }
 
 opener.addEventListener('click', open);
@@ -58,4 +64,11 @@ if (video) {
   video.addEventListener('ended', () => setProgress(1));
   circle.addEventListener('click', () => (video.paused ? video.play() : video.pause()));
   circle.style.cursor = 'pointer';
+}
+
+if (preview) {
+  preview.muted = true;
+  preview.addEventListener('timeupdate', () => {
+    if (preview.duration) previewRing.style.setProperty('--progress', preview.currentTime / preview.duration);
+  });
 }

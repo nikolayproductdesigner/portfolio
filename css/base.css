@@ -47,9 +47,9 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; }
 
 /* Типографика */
-.text-h1 {               /* hero, 40 / 120% */
+.text-h1 {               /* hero и заголовки кейсов, 28 / 120% */
   font-family: var(--font-mono);
-  font-size: 40px;
+  font-size: 28px;
   line-height: 1.2;
   letter-spacing: -0.04em;
 }
@@ -91,8 +91,9 @@ button { font: inherit; color: inherit; }
 
 /* Адаптив: типографика */
 @media (max-width: 1023px) {
-  .text-h1 { font-size: 32px; }
+  .text-h1 { font-size: 26px; }
 }
 @media (max-width: 767px) {
   .text-h1 { font-size: 24px; }
+  .text-h2 { font-size: 18px; }
 }
