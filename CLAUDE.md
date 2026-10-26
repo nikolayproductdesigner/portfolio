@@ -35,7 +35,7 @@
 - Аватарка `images/ava.png` 200×200 (2x, из Figma) — Коля заменит сам. Синяя дуга вокруг — `.hero-loom-ring` (`--progress`, по умолчанию четверть).
 - Яндекс.Метрика (счётчик 113677863) — в `<head>` всех страниц сразу после `meta robots`. Новые страницы — тоже со счётчиком.
 - Индексация закрыта: `<meta name="robots" content="noindex, nofollow">` во всех страницах (robots.txt намеренно не делаем — с Disallow поисковик не увидит noindex). Новые страницы — тоже с этим мета.
-- Аватарка (`.hero-loom`, без «it's me») — в стики-блоке «обо мне», на всех ширинах. Превью-видео: заменить `<img class="hero-loom-media">` на `<video class="hero-loom-media" src="…" autoplay muted loop playsinline>` — дуга покажет прогресс, при открытии кружка превью встаёт на паузу.
+- Аватарка (`.hero-loom`, без «it's me») — в стики-блоке «обо мне», на всех ширинах. Сейчас скрыта атрибутом `hidden` (из DOM не удалять — на неё завязан `js/video-note.js`); вернуть — убрать `hidden`. Превью-видео: заменить `<img class="hero-loom-media">` на `<video class="hero-loom-media" src="…" autoplay muted loop playsinline>` — дуга покажет прогресс, при открытии кружка превью встаёт на паузу.
 - Видео-кружок (Figma 759:7309): клик по аватарке на главной → `<dialog class="video-note">`, логика в `js/video-note.js`. Пока заглушка `images/ava-video.webp` (1360², исходник в `_sources/images/`) и фейковый прогресс 20 с. Видео: заменить `<img class="video-note-media">` на `<video class="video-note-media" src="…" playsinline preload="metadata">` — прогресс и пауза по клику подхватятся.
 - Фавикон: `images/favicon.png` (80×80, синяя звезда `#4920FF`, прозрачный — PNG от Коли) + `images/apple-touch-icon.png` (180×180, та же звезда на фоне сайта).
 - Дальше: git + GitHub Pages, OG-картинка, 404.

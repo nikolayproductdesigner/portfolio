@@ -43,6 +43,7 @@
   cursor: pointer;
   transition: transform .3s cubic-bezier(.4, 0, .2, 1);
 }
+.hero-loom[hidden] { display: none; }
 @media (hover: hover) {
   .hero-loom:hover { transform: scale(1.04); }
 }
