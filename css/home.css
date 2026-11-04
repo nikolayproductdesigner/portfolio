@@ -4,17 +4,16 @@
 }
 
 /* «Кейсы»: сетка 12 колонок. Слева «обо мне» (колонки 1–4) — стики, справа обложки (6–12).
-   Обо мне и обложки начинаются на 211px от верха страницы */
+   Обо мне и обложки начинаются в 40px под шапкой и на этом же уровне залипает «обо мне» */
 .home {
-  --home-top: 211px;
+  --home-top: calc(var(--page-padding) + var(--header-height) + 40px);  /* 24 + шапка 56 + 40 = 120 */
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr auto;
   column-gap: var(--grid-gap);
   padding-top: var(--home-top);
 }
-/* Колонка «обо мне» тянется до футера: при скролле блок сначала уезжает вверх,
-   пока до шапки не останется 40px (Figma 851:10647), дальше стоит на месте
+/* Колонка «обо мне» тянется до футера: при скролле блок стоит на месте
    и останавливается над текстом футера, не наезжая на него */
 .about {
   grid-column: 1 / 5;
@@ -23,7 +22,7 @@
 }
 .about-sticky {
   position: sticky;
-  top: calc(var(--page-padding) + var(--header-height) + 40px);  /* 24 + шапка 56 + 40 = 120 */
+  top: var(--home-top);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -257,7 +256,6 @@ html:has(.video-note[open]) { overflow: hidden; }
 @media (max-width: 1023px) {
   /* В колонку: обо мне (не стики) → обложки → футер */
   .home {
-    --home-top: 160px;
     display: flex;
     flex-direction: column;
     gap: 64px;
@@ -272,7 +270,7 @@ html:has(.video-note[open]) { overflow: hidden; }
   .header-buttons { display: none; }
   .main-footer-buttons { display: flex; }
 
-  .home { --home-top: 112px; gap: 48px; }
+  .home { gap: 48px; }
   .about-sticky { gap: 20px; }
   .hero-loom,
   .hero-loom-media { width: 80px; height: 80px; }
